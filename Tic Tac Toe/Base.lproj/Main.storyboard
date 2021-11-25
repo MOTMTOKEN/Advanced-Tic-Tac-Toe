@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pngfind.com-grid-background-png-1288069.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCy-Dn-C31">
+                                <rect key="frame" x="0.0" y="248" width="414" height="401"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNa-xf-1RS">
+                                <rect key="frame" x="10" y="258" width="129" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="wiD-sp-U95"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWQ-ef-cPx">
+                                <rect key="frame" x="143" y="525" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7n-g5-Eg5">
+                                <rect key="frame" x="280" y="525" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKO-kY-4Gr">
+                                <rect key="frame" x="280" y="391" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-je-VD2">
+                                <rect key="frame" x="143" y="391" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-d4-Rac">
+                                <rect key="frame" x="10" y="525" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjG-zQ-1OS">
+                                <rect key="frame" x="280" y="258" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLL-4O-HcL">
+                                <rect key="frame" x="143" y="258" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-gb-3gC">
+                                <rect key="frame" x="10" y="391" width="129" height="115"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4Z-ff-vyp">
+                                <rect key="frame" x="35" y="49" width="68" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUh-Wi-ac2">
+                                <rect key="frame" x="35" y="71" width="68" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="eNa-xf-1RS" firstAttribute="baseline" secondItem="nLL-4O-HcL" secondAttribute="baseline" id="27N-Rn-Hgl"/>
+                            <constraint firstItem="zhf-gb-3gC" firstAttribute="baseline" secondItem="OAi-je-VD2" secondAttribute="baseline" id="6fu-rY-7IF"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="centerX" secondItem="gWQ-ef-cPx" secondAttribute="centerX" id="Bmd-Zm-xKP"/>
+                            <constraint firstItem="AKO-kY-4Gr" firstAttribute="trailing" secondItem="z7n-g5-Eg5" secondAttribute="trailing" id="C37-qm-tni"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="centerY" secondItem="AKO-kY-4Gr" secondAttribute="centerY" id="CKD-f9-HF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GjG-zQ-1OS" secondAttribute="trailing" constant="5" id="Gfq-1e-Nd7"/>
+                            <constraint firstItem="eNa-xf-1RS" firstAttribute="leading" secondItem="zhf-gb-3gC" secondAttribute="leading" id="Jtg-Jr-m9f"/>
+                            <constraint firstItem="zhf-gb-3gC" firstAttribute="trailing" secondItem="IxS-d4-Rac" secondAttribute="trailing" id="RIC-fQ-lXN"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="S4d-pB-bDW"/>
+                            <constraint firstItem="nLL-4O-HcL" firstAttribute="trailing" secondItem="OAi-je-VD2" secondAttribute="trailing" id="SpT-xk-1OD"/>
+                            <constraint firstItem="GjG-zQ-1OS" firstAttribute="leading" secondItem="nLL-4O-HcL" secondAttribute="trailing" constant="8" id="Swh-mK-kBV"/>
+                            <constraint firstItem="IxS-d4-Rac" firstAttribute="top" secondItem="zhf-gb-3gC" secondAttribute="bottom" constant="19" id="U1a-WX-sAi"/>
+                            <constraint firstItem="IxS-d4-Rac" firstAttribute="baseline" secondItem="gWQ-ef-cPx" secondAttribute="baseline" id="URu-Ri-yhE"/>
+                            <constraint firstItem="eNa-xf-1RS" firstAttribute="trailing" secondItem="zhf-gb-3gC" secondAttribute="trailing" id="UmJ-ym-dop"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="204" id="XCO-bK-4w6"/>
+                            <constraint firstItem="OAi-je-VD2" firstAttribute="baseline" secondItem="AKO-kY-4Gr" secondAttribute="baseline" id="XV6-gj-6BR"/>
+                            <constraint firstItem="nLL-4O-HcL" firstAttribute="leading" secondItem="OAi-je-VD2" secondAttribute="leading" id="ZuF-sC-YyJ"/>
+                            <constraint firstItem="gWQ-ef-cPx" firstAttribute="baseline" secondItem="z7n-g5-Eg5" secondAttribute="baseline" id="Zxp-vE-qWm"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aax-fn-ZQ6"/>
+                            <constraint firstItem="zhf-gb-3gC" firstAttribute="leading" secondItem="IxS-d4-Rac" secondAttribute="leading" id="ao2-tq-LLo"/>
+                            <constraint firstItem="OCy-Dn-C31" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cyb-p3-fMP"/>
+                            <constraint firstItem="OAi-je-VD2" firstAttribute="trailing" secondItem="gWQ-ef-cPx" secondAttribute="trailing" id="gnz-Cr-dlX"/>
+                            <constraint firstItem="GjG-zQ-1OS" firstAttribute="leading" secondItem="AKO-kY-4Gr" secondAttribute="leading" id="mtS-q6-DwJ"/>
+                            <constraint firstItem="AKO-kY-4Gr" firstAttribute="leading" secondItem="z7n-g5-Eg5" secondAttribute="leading" id="njF-Wc-Yzn"/>
+                            <constraint firstItem="eNa-xf-1RS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="214" id="oyN-v7-smW"/>
+                            <constraint firstItem="nLL-4O-HcL" firstAttribute="leading" secondItem="eNa-xf-1RS" secondAttribute="trailing" constant="4" id="r1C-hn-FRM"/>
+                            <constraint firstItem="eNa-xf-1RS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tzV-PI-RcK"/>
+                            <constraint firstItem="OAi-je-VD2" firstAttribute="leading" secondItem="gWQ-ef-cPx" secondAttribute="leading" id="vuC-05-UNB"/>
+                            <constraint firstItem="nLL-4O-HcL" firstAttribute="baseline" secondItem="GjG-zQ-1OS" secondAttribute="baseline" id="yVY-YQ-xCi"/>
+                            <constraint firstItem="GjG-zQ-1OS" firstAttribute="trailing" secondItem="AKO-kY-4Gr" secondAttribute="trailing" id="zNA-6v-HND"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-46" y="56"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pngfind.com-grid-background-png-1288069.png" width="684" height="685"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

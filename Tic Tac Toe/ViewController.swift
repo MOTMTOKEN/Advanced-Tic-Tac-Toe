@@ -186,5 +186,14 @@ class ViewController: UIViewController {
     }
 }
     
+    func resetGame() {
+        
+      //  player1 = [Int]()
+      //  player2 = [Int]()
+        
+      //  ActivePlayer = 1
+        
+    }
+    
     
 }

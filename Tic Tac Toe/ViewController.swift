@@ -12,6 +12,26 @@ class ViewController: UIViewController {
     var ActivePlayer = 1
     var player1 = [Int]()
     var player2 = [Int]()
+    var foundWinner = false
+    
+    @IBOutlet weak var btn1: UIButton!
+    
+    @IBOutlet weak var btn2: UIButton!
+    
+    @IBOutlet weak var btn3: UIButton!
+    
+    @IBOutlet weak var btn4: UIButton!
+    
+    @IBOutlet weak var btn5: UIButton!
+    
+    @IBOutlet weak var btn6: UIButton!
+    
+    @IBOutlet weak var btn7: UIButton!
+    
+    @IBOutlet weak var btn8: UIButton!
+    
+    @IBOutlet weak var btn9: UIButton!
+    
 
     @IBOutlet weak var player1NameShow: UILabel!
     
@@ -69,12 +89,15 @@ class ViewController: UIViewController {
             findWinner()
         }
         
-        // can't press button twice
-        selectedButton.isEnabled = false
+        // can't press button twice if foundWinner is false
+        if foundWinner == false {
+            selectedButton.isEnabled = false
+        }
+        
         
     }
     
-    func findWinner()  {
+    func findWinner() {
             var winner = -1
             
             // row_1
@@ -173,6 +196,10 @@ class ViewController: UIViewController {
              alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
              
              self.present(alert, animated: true, completion: nil)
+            
+            foundWinner = true
+            
+            resetGame()
                     
                 }
 
@@ -183,7 +210,14 @@ class ViewController: UIViewController {
               alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
               
               self.present(alert, animated: true, completion: nil)
+             
+             foundWinner = true
+             
+             resetGame()
+             
     }
+        
+        
 }
     
     func resetGame() {
@@ -192,8 +226,45 @@ class ViewController: UIViewController {
       //  player2 = [Int]()
         
       //  ActivePlayer = 1
+            
+        ActivePlayer = 1
+        player1.removeAll()
+        player2.removeAll()
         
-    }
-    
+
+                
+
+        btn1.setTitle("", for: UIControl.State.normal)
+        btn2.setTitle("", for: UIControl.State.normal)
+        btn3.setTitle("", for: UIControl.State.normal)
+        btn4.setTitle("", for: UIControl.State.normal)
+        btn5.setTitle("", for: UIControl.State.normal)
+        btn6.setTitle("", for: UIControl.State.normal)
+        btn7.setTitle("", for: UIControl.State.normal)
+        btn8.setTitle("", for: UIControl.State.normal)
+        btn9.setTitle("", for: UIControl.State.normal)
+        
+        btn1.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn2.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn3.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn4.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn5.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn6.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn7.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn8.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+        btn9.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
+
+        btn1.isEnabled = true
+        btn2.isEnabled = true
+        btn3.isEnabled = true
+        btn4.isEnabled = true
+        btn5.isEnabled = true
+        btn6.isEnabled = true
+        btn7.isEnabled = true
+        btn8.isEnabled = true
+        btn9.isEnabled = true
+                    
+        foundWinner = false
+        }
     
 }

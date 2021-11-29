@@ -136,6 +136,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="n9Q-ie-BKy"/>
                     <connections>
+                        <outlet property="btn1" destination="eNa-xf-1RS" id="UIE-eV-oXk"/>
+                        <outlet property="btn2" destination="nLL-4O-HcL" id="5me-O9-9iH"/>
+                        <outlet property="btn3" destination="GjG-zQ-1OS" id="cMD-hf-R9J"/>
+                        <outlet property="btn4" destination="zhf-gb-3gC" id="iWB-1j-gCC"/>
+                        <outlet property="btn5" destination="OAi-je-VD2" id="eEL-iY-WVv"/>
+                        <outlet property="btn6" destination="AKO-kY-4Gr" id="9Vo-sa-axW"/>
+                        <outlet property="btn7" destination="IxS-d4-Rac" id="NM9-mO-MUi"/>
+                        <outlet property="btn8" destination="gWQ-ef-cPx" id="KVW-8Q-LVL"/>
+                        <outlet property="btn9" destination="z7n-g5-Eg5" id="cfc-ff-mFC"/>
                         <outlet property="player1NameShow" destination="x4Z-ff-vyp" id="fSl-BN-pLk"/>
                         <outlet property="player2NameShow" destination="qUh-Wi-ac2" id="vGo-Zr-Lyp"/>
                         <outlet property="whosTurn" destination="SDH-C3-kz6" id="PfY-kP-4IP"/>

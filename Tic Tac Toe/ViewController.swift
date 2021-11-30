@@ -63,15 +63,20 @@ class ViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: Any) {
         let selectedButton = sender as! UIButton
         // trying to change font size
-        // selectedButton.titleLabel?.font = UIFont(name: "System", size:100)
-
+         
        // print(selectedButton.tag) checks which button is clicked
+        
+        
+            selectedButton.isEnabled = false
+        
         
         if ActivePlayer == 1{
             selectedButton.setTitle("X", for: UIControl.State.normal)
             selectedButton.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 507255, alpha: 0.5)
             // since we gave all buttons a tag we can put the tags (1-9) into an array
             // and track what moves the player made
+           // selectedButton.titleLabel?.font = .systemFont(ofSize: 100)    // UIFont(name: "System", size:100)
+
             player1.append(selectedButton.tag)
            // print(player1)
             ActivePlayer = 2
@@ -90,9 +95,9 @@ class ViewController: UIViewController {
         }
         
         // can't press button twice if foundWinner is false
-        if foundWinner == false {
-            selectedButton.isEnabled = false
-        }
+        
+        
+        
         
         
     }
@@ -197,7 +202,7 @@ class ViewController: UIViewController {
              
              self.present(alert, animated: true, completion: nil)
             
-            foundWinner = true
+            
             
             resetGame()
                     
@@ -211,7 +216,6 @@ class ViewController: UIViewController {
               
               self.present(alert, animated: true, completion: nil)
              
-             foundWinner = true
              
              resetGame()
              
@@ -231,7 +235,7 @@ class ViewController: UIViewController {
         player1.removeAll()
         player2.removeAll()
         
-
+        
                 
 
         btn1.setTitle("", for: UIControl.State.normal)
@@ -264,7 +268,7 @@ class ViewController: UIViewController {
         btn8.isEnabled = true
         btn9.isEnabled = true
                     
-        foundWinner = false
+        
         }
     
 }

@@ -18,6 +18,8 @@
 		5C5E368627503709001F5248 /* Tic_Tac_ToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E368527503709001F5248 /* Tic_Tac_ToeUITestsLaunchTests.swift */; };
 		5C5E3693275037A7001F5248 /* pngfind.com-grid-background-png-1288069.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5E3692275037A7001F5248 /* pngfind.com-grid-background-png-1288069.png */; };
 		5C5E3697275074E7001F5248 /* TwoNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E3696275074E7001F5248 /* TwoNamesViewController.swift */; };
+		5C5E369927581797001F5248 /* WhatModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E369827581796001F5248 /* WhatModeViewController.swift */; };
+		5C5E369B27581E80001F5248 /* OneNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5E369A27581E80001F5248 /* OneNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		5C5E368527503709001F5248 /* Tic_Tac_ToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5C5E3692275037A7001F5248 /* pngfind.com-grid-background-png-1288069.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pngfind.com-grid-background-png-1288069.png"; path = "../../../Downloads/pngfind.com-grid-background-png-1288069.png"; sourceTree = "<group>"; };
 		5C5E3696275074E7001F5248 /* TwoNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoNamesViewController.swift; sourceTree = "<group>"; };
+		5C5E369827581796001F5248 /* WhatModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatModeViewController.swift; sourceTree = "<group>"; };
+		5C5E369A27581E80001F5248 /* OneNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,10 @@
 			children = (
 				5C5E366227503700001F5248 /* AppDelegate.swift */,
 				5C5E366427503700001F5248 /* SceneDelegate.swift */,
+				5C5E369A27581E80001F5248 /* OneNameViewController.swift */,
 				5C5E3696275074E7001F5248 /* TwoNamesViewController.swift */,
 				5C5E366627503700001F5248 /* ViewController.swift */,
+				5C5E369827581796001F5248 /* WhatModeViewController.swift */,
 				5C5E366827503700001F5248 /* Main.storyboard */,
 				5C5E366B27503709001F5248 /* Assets.xcassets */,
 				5C5E3692275037A7001F5248 /* pngfind.com-grid-background-png-1288069.png */,
@@ -266,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5E3697275074E7001F5248 /* TwoNamesViewController.swift in Sources */,
+				5C5E369927581797001F5248 /* WhatModeViewController.swift in Sources */,
 				5C5E366727503700001F5248 /* ViewController.swift in Sources */,
 				5C5E366327503700001F5248 /* AppDelegate.swift in Sources */,
+				5C5E369B27581E80001F5248 /* OneNameViewController.swift in Sources */,
 				5C5E366527503700001F5248 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

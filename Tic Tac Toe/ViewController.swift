@@ -330,88 +330,96 @@ class ViewController: UIViewController {
     func computerPlayer(string: String){
         
        
+        let r = 1...9
+        let randomIndex = r.shuffled()
         
-        
-        if btn1.isEnabled == true {
-            btn1.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn1.tag)
-            btn1.isEnabled = false
-            ActivePlayer = 1
+        for index in randomIndex {
             
-            return
+            
+            if btn1.isEnabled == true && index == 1 {
+                btn1.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn1.tag)
+                btn1.isEnabled = false
+                ActivePlayer = 1
+                
+                return
+            }
+            
+            if btn2.isEnabled == true && index == 2 {
+                btn2.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn2.tag)
+                btn2.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn3.isEnabled == true && index == 3 {
+                btn3.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn3.tag)
+                btn3.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn4.isEnabled == true && index == 4 {
+                btn4.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn4.tag)
+                btn4.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn5.isEnabled == true && index == 5 {
+                btn5.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn5.tag)
+                btn5.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn6.isEnabled == true && index == 6 {
+                btn6.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn6.tag)
+                btn6.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn7.isEnabled == true && index == 7 {
+                btn7.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn7.tag)
+                btn7.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn8.isEnabled == true && index == 8 {
+                btn8.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn8.tag)
+                btn8.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
+            if btn9.isEnabled == true && index == 9 {
+                btn9.setTitle("\(string)", for: UIControl.State.normal)
+                playerComputer.append(btn9.tag)
+                btn9.isEnabled = false
+                
+                ActivePlayer = 1
+                return
+            }
+            
         }
         
-        if btn2.isEnabled == true {
-            btn2.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn2.tag)
-            btn2.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
         
-        if btn3.isEnabled == true {
-            btn3.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn3.tag)
-            btn3.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn4.isEnabled == true {
-            btn4.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn4.tag)
-            btn4.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn5.isEnabled == true {
-            btn5.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn5.tag)
-            btn5.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn6.isEnabled == true {
-            btn6.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn6.tag)
-            btn6.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn7.isEnabled == true {
-            btn7.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn7.tag)
-            btn7.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn8.isEnabled == true {
-            btn8.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn8.tag)
-            btn8.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
-        
-        if btn9.isEnabled == true {
-            btn9.setTitle("\(string)", for: UIControl.State.normal)
-            playerComputer.append(btn9.tag)
-            btn9.isEnabled = false
-            
-            ActivePlayer = 1
-            return
-        }
         
         return
         

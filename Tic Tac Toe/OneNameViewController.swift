@@ -13,6 +13,9 @@ class OneNameViewController: UIViewController {
     let toMainOneName = "toMainOneName"
     
     
+    @IBOutlet weak var XorO: UISegmentedControl!
+    
+    
     @IBOutlet weak var playersName: UITextField!
     
     @IBAction func playButton(_ sender: UIButton) {
@@ -29,6 +32,8 @@ class OneNameViewController: UIViewController {
             destinationVc.recivingMessage1 = playersName.text
             
             destinationVc.recivingMessage2 = "Computer"
+            
+            destinationVc.whichPlayer = XorO.selectedSegmentIndex
             
             destinationVc.whosPlaying = 1
         }

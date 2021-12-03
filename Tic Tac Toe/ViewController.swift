@@ -14,7 +14,10 @@ class ViewController: UIViewController {
     var player2 = [Int]()
     var playerComputer = [Int]()
     var foundWinner = false
+    // if computer is playing this value is 1
     var whosPlaying: Int = 0
+    // gets which player X or O for computer and were working with index 0 and 1
+    var whichPlayer = 3
     
     @IBOutlet weak var btn1: UIButton!
     
@@ -58,7 +61,14 @@ class ViewController: UIViewController {
         player1NameShow.text = "\(recivingMessage1 ?? "")"
         player2NameShow.text = "\(recivingMessage2 ?? "")"
         whosTurn.text = "X"
-
+        
+        print(whichPlayer)
+        
+        if whosPlaying == 1 && whichPlayer == 1 {
+            whosTurn.text = "O"
+            computerPlayer(string: "X")
+            ActivePlayer = 2
+        }
         
     }
 
@@ -73,24 +83,32 @@ class ViewController: UIViewController {
         
         
         if ActivePlayer == 1{
-            selectedButton.setTitle("X", for: UIControl.State.normal)
-            selectedButton.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+            if whichPlayer != 1 {
+                selectedButton.setTitle("X", for: UIControl.State.normal)
+                selectedButton.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+            }
+            
             // since we gave all buttons a tag we can put the tags (1-9) into an array
             // and track what moves the player made
            // selectedButton.titleLabel?.font = .systemFont(ofSize: 100)    // UIFont(name: "System", size:100)
+            if whichPlayer != 1 {
+                player1.append(selectedButton.tag)
+            }
             
-            player1.append(selectedButton.tag)
-           // print(player1)
+            print(player1)
             ActivePlayer = 2
             //Whos turn next
             if whosPlaying != 1 {
                 whosTurn.text = "O"
             }
             
-            if whosPlaying == 1 {
+            if whosPlaying == 1 && whichPlayer == 0 {
                 whosTurn.text = "X"
                 computerPlayer(string: "O")
             }
+            
+            // for first turn
+            
             
             
             
@@ -99,18 +117,41 @@ class ViewController: UIViewController {
             
         } else {
             
+            
             selectedButton.setTitle("O", for: UIControl.State.normal)
             selectedButton.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+            
+            
+            
             player2.append(selectedButton.tag)
-          //  print(player2)
-            whosTurn.text = "X"
+            print(player2)
+            //print(playerComputer)
+            if whosPlaying != 1 {
+                whosTurn.text = "X"
+            }
+            
             ActivePlayer = 1
+            
+            
+            if whosPlaying == 1 && whichPlayer == 1 {
+                whenItsO()
+            }
+                        
             findWinner()
         }
         
         // can't press button twice if foundWinner is false
         
-        
+    
+        func whenItsO() {
+            
+            if whosPlaying == 1 && whichPlayer == 1 {
+                whosTurn.text = "O"
+                computerPlayer(string: "X")
+                ActivePlayer = 2
+            }
+            
+        }
         
         
         
@@ -239,15 +280,28 @@ class ViewController: UIViewController {
                     
                     var msg = ""
                     if winner == 1 {
+                        
                         msg = " \(player1NameShow.text ?? "") is winner"
                         player1Points += 1
                         // Show updated score
                         player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
-                    }else{
-                      msg = " \(player2NameShow.text ?? "") is winner"
+                        }else{
+                            
+                            if whichPlayer != 1 {
+                        msg = " \(player2NameShow.text ?? "") is winner"
                         player2Points += 1
                         // Show updated score
                         player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
+                            }
+                            // if player is O vs cpmputer give points to player1 and show their name instead
+                            if whichPlayer == 1 {
+                                msg = " \(recivingMessage1 ?? "") is winner"
+                                player1Points += 1
+                                // Show updated score
+                                player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
+                            }
+                        
+                      
                     }
                     //print(msg)
                     //show alert
@@ -324,6 +378,12 @@ class ViewController: UIViewController {
         btn8.isEnabled = true
         btn9.isEnabled = true
                     
+        // when game resets and we are playing O vs computer we need to start with a move
+        if whosPlaying == 1 && whichPlayer == 1 {
+            whosTurn.text = "O"
+            computerPlayer(string: "X")
+            ActivePlayer = 2
+        }
         
         }
     
@@ -341,7 +401,11 @@ class ViewController: UIViewController {
                 btn1.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
                 playerComputer.append(btn1.tag)
                 btn1.isEnabled = false
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 
                 return
             }
@@ -351,7 +415,11 @@ class ViewController: UIViewController {
                 btn2.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
                 btn2.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 return
             }
             
@@ -361,7 +429,11 @@ class ViewController: UIViewController {
                 playerComputer.append(btn3.tag)
                 btn3.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 return
             }
             
@@ -371,7 +443,11 @@ class ViewController: UIViewController {
                 playerComputer.append(btn4.tag)
                 btn4.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 return
             }
             
@@ -381,7 +457,11 @@ class ViewController: UIViewController {
                 playerComputer.append(btn5.tag)
                 btn5.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 return
             }
             
@@ -391,7 +471,11 @@ class ViewController: UIViewController {
                 playerComputer.append(btn6.tag)
                 btn6.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                
                 return
             }
             
@@ -401,7 +485,11 @@ class ViewController: UIViewController {
                 playerComputer.append(btn7.tag)
                 btn7.isEnabled = false
                 
-                ActivePlayer = 1
+                if whichPlayer != 1 {
+                    ActivePlayer = 1
+                }
+                    
+                
                 return
             }
             
@@ -411,7 +499,10 @@ class ViewController: UIViewController {
                 playerComputer.append(btn8.tag)
                 btn8.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                    ActivePlayer = 1
+                
+                
                 return
             }
             
@@ -421,7 +512,9 @@ class ViewController: UIViewController {
                 playerComputer.append(btn9.tag)
                 btn9.isEnabled = false
                 
-                ActivePlayer = 1
+                
+                    ActivePlayer = 1
+                
                 return
             }
             
@@ -436,17 +529,21 @@ class ViewController: UIViewController {
     func computerWon(){
         
         
-        let alert = UIAlertController(title: "Winner", message: "computer won", preferredStyle: UIAlertController.Style.alert)
-         
-         alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-         
-         self.present(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Winner", message: "computer won", preferredStyle: UIAlertController.Style.alert)
+             
+             alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+             
+             self.present(alert, animated: true, completion: nil)
         
-        player2Points += 1
-        // Show updated score
-        player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
+        
+        
+            player2Points += 1
+            // Show updated score
+            player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
+        
         
         resetGame()
+        
         
     }
     

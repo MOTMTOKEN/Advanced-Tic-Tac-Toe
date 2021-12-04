@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var player1 = [Int]()
     var player2 = [Int]()
     var playerComputer = [Int]()
-    var foundWinner = false
+    
     // if computer is playing this value is 1
     var whosPlaying: Int = 0
     // gets which player X or O for computer and were working with index 0 and 1
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
             findWinner()
         }
         
-        // can't press button twice if foundWinner is false
+        
         
     
         func whenItsO() {

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var player1 = [Int]()
     var player2 = [Int]()
     var playerComputer = [Int]()
-    
+    var foundWinner = false
     // if computer is playing this value is 1
     var whosPlaying: Int = 0
     // gets which player X or O for computer and were working with index 0 and 1
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
             findWinner()
         }
         
-        
+        // can't press button twice if foundWinner is false
         
     
         func whenItsO() {
@@ -169,10 +169,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(1) &&  playerComputer.contains(2) &&  playerComputer.contains(3)){
-             computerWon()
-                return
-            }
+        
             
             // row_2
             if( player1.contains(4) &&  player1.contains(5) &&  player1.contains(6)){
@@ -183,11 +180,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(4) &&  playerComputer.contains(5) &&  playerComputer.contains(6)){
-            computerWon()
-                return
-                
-            }
+            
             
             
             // row_3
@@ -199,10 +192,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(7) &&  playerComputer.contains(8) &&  playerComputer.contains(9)){
-                 computerWon()
-                return
-            }
+            
             
             
             // col_1
@@ -214,10 +204,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(1) &&  playerComputer.contains(4) &&  playerComputer.contains(7)){
-                computerWon()
-                return
-            }
+            
             
             // col_2
             if( player1.contains(2) &&  player1.contains(5) &&  player1.contains(8)){
@@ -228,10 +215,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(2) &&  playerComputer.contains(5) &&  playerComputer.contains(8)){
-                computerWon()
-                return
-            }
+            
             
             // col_3
             if( player1.contains(3) &&  player1.contains(6) &&  player1.contains(9)){
@@ -242,10 +226,7 @@ class ViewController: UIViewController {
                 winner = 2
             }
         
-            if( playerComputer.contains(3) &&  playerComputer.contains(6) &&  playerComputer.contains(9)){
-                computerWon()
-                return
-            }
+            
         
             // diagonal_1
             if( player1.contains(1) &&  player1.contains(5) &&  player1.contains(9)){
@@ -256,10 +237,7 @@ class ViewController: UIViewController {
             winner = 2
             }
         
-            if( playerComputer.contains(1) &&  playerComputer.contains(5) &&  playerComputer.contains(9)){
-                computerWon()
-                return
-            }
+            
         
             // diagonal_2
             if( player1.contains(3) &&  player1.contains(5) &&  player1.contains(7)){
@@ -270,7 +248,46 @@ class ViewController: UIViewController {
             winner = 2
             }
         
-            if( playerComputer.contains(3) &&  playerComputer.contains(5) &&  playerComputer.contains(7)){
+            // All computer moves check at the end because the computer plays a move even after you win
+        
+            if( playerComputer.contains(1) &&  playerComputer.contains(2) &&  playerComputer.contains(3)) && winner == -1{
+            computerWon()
+                return
+                
+            }
+            
+            if( playerComputer.contains(4) &&  playerComputer.contains(5) &&  playerComputer.contains(6)) && winner == -1{
+            computerWon()
+                return
+                
+            }
+            
+            if( playerComputer.contains(7) &&  playerComputer.contains(8) &&  playerComputer.contains(9)) && winner == -1{
+                 computerWon()
+                return
+            }
+            
+            if( playerComputer.contains(1) &&  playerComputer.contains(4) &&  playerComputer.contains(7)) && winner == -1{
+                computerWon()
+                return
+            }
+            
+            if( playerComputer.contains(2) &&  playerComputer.contains(5) &&  playerComputer.contains(8)) && winner == -1{
+                computerWon()
+                return
+            }
+            
+            if( playerComputer.contains(3) &&  playerComputer.contains(6) &&  playerComputer.contains(9)) && winner == -1{
+                computerWon()
+                return
+            }
+            
+            if( playerComputer.contains(1) &&  playerComputer.contains(5) &&  playerComputer.contains(9)) && winner == -1{
+                computerWon()
+                return
+            }
+        
+            if( playerComputer.contains(3) &&  playerComputer.contains(5) &&  playerComputer.contains(7)) && winner == -1{
                 computerWon()
                 return
             }
@@ -389,7 +406,7 @@ class ViewController: UIViewController {
     
     func computerPlayer(string: String){
         
-       
+        print(playerComputer)
         let r = 1...9
         let randomIndex = r.shuffled()
         
@@ -398,7 +415,12 @@ class ViewController: UIViewController {
             
             if btn1.isEnabled == true && index == 1 {
                 btn1.setTitle("\(string)", for: UIControl.State.normal)
-                btn1.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn1.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn1.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
+                
                 playerComputer.append(btn1.tag)
                 btn1.isEnabled = false
                 
@@ -412,7 +434,12 @@ class ViewController: UIViewController {
             
             if btn2.isEnabled == true && index == 2 {
                 btn2.setTitle("\(string)", for: UIControl.State.normal)
-                btn2.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn2.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn2.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
+                playerComputer.append(btn2.tag)
                 btn2.isEnabled = false
                 
                 
@@ -425,7 +452,11 @@ class ViewController: UIViewController {
             
             if btn3.isEnabled == true && index == 3 {
                 btn3.setTitle("\(string)", for: UIControl.State.normal)
-                btn3.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn3.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn3.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn3.tag)
                 btn3.isEnabled = false
                 
@@ -439,7 +470,11 @@ class ViewController: UIViewController {
             
             if btn4.isEnabled == true && index == 4 {
                 btn4.setTitle("\(string)", for: UIControl.State.normal)
-                btn4.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn4.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn4.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn4.tag)
                 btn4.isEnabled = false
                 
@@ -453,7 +488,11 @@ class ViewController: UIViewController {
             
             if btn5.isEnabled == true && index == 5 {
                 btn5.setTitle("\(string)", for: UIControl.State.normal)
-                btn5.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn5.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn5.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn5.tag)
                 btn5.isEnabled = false
                 
@@ -467,7 +506,11 @@ class ViewController: UIViewController {
             
             if btn6.isEnabled == true && index == 6 {
                 btn6.setTitle("\(string)", for: UIControl.State.normal)
-                btn6.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn6.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn6.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn6.tag)
                 btn6.isEnabled = false
                 
@@ -481,7 +524,11 @@ class ViewController: UIViewController {
             
             if btn7.isEnabled == true && index == 7 {
                 btn7.setTitle("\(string)", for: UIControl.State.normal)
-                btn7.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn7.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn7.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn7.tag)
                 btn7.isEnabled = false
                 
@@ -495,7 +542,11 @@ class ViewController: UIViewController {
             
             if btn8.isEnabled == true && index == 8 {
                 btn8.setTitle("\(string)", for: UIControl.State.normal)
-                btn8.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn8.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn8.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn8.tag)
                 btn8.isEnabled = false
                 
@@ -508,7 +559,11 @@ class ViewController: UIViewController {
             
             if btn9.isEnabled == true && index == 9 {
                 btn9.setTitle("\(string)", for: UIControl.State.normal)
-                btn9.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                if whichPlayer != 1 {
+                    btn9.backgroundColor = UIColor(red: 255/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                } else {
+                    btn9.backgroundColor = UIColor(red: 100/255, green: 250/255, blue: 0/255, alpha: 0.5)
+                }
                 playerComputer.append(btn9.tag)
                 btn9.isEnabled = false
                 

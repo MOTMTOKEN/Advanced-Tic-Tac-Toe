@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0gp-kv-uVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Awo-np-q1y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="-631"/>
+            <point key="canvasLocation" x="3697.1014492753625" y="-631.47321428571422"/>
         </scene>
         <!--What Mode View Controller-->
         <scene sceneID="D3T-hZ-CzF">
@@ -222,6 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="7YI-MX-R5E"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Knk-BU-uEZ"/>
                     <connections>
                         <segue destination="sjF-b0-0Qo" kind="show" identifier="toNames" id="tAz-9k-FIg"/>
                         <segue destination="a7k-yu-HKQ" kind="show" identifier="oneName" id="nuj-DX-UMJ"/>
@@ -229,14 +230,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1L-Bv-f7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="-631"/>
+            <point key="canvasLocation" x="1550.7246376811595" y="-631.47321428571422"/>
         </scene>
         <!--Two Names View Controller-->
         <scene sceneID="n1U-Xm-IEP">
             <objects>
                 <viewController id="sjF-b0-0Qo" customClass="TwoNamesViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1gp-El-1gS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter names!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-QN-pTb">
@@ -282,14 +283,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAT-4T-E7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665.217391304348" y="-203.57142857142856"/>
+            <point key="canvasLocation" x="2575.36231884058" y="-203.57142857142856"/>
         </scene>
         <!--One Name View Controller-->
         <scene sceneID="yQd-ut-ES2">
             <objects>
                 <viewController id="a7k-yu-HKQ" customClass="OneNameViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ziL-Ck-HbL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter name!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wll-pc-CMI">
@@ -340,7 +341,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ni2-DK-4jN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-1112"/>
+            <point key="canvasLocation" x="2605.7971014492755" y="-1112.2767857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kvL-SN-Pjw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Awo-np-q1y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kA-On-thD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0gp-kv-uVM" kind="relationship" relationship="rootViewController" id="JkX-Zy-RC4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0q-lT-dhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.57971014492762" y="-631.47321428571422"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

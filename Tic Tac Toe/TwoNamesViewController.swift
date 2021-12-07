@@ -38,9 +38,14 @@ class TwoNamesViewController: UIViewController {
             
             let destinationVc = segue.destination as! ViewController
             
-            destinationVc.recivingMessage1 = player1Name.text
             
-            destinationVc.recivingMessage2 = player2Name.text
+                destinationVc.recivingMessage1 = player1Name.text
+            
+            
+            
+                destinationVc.recivingMessage2 = player2Name.text
+            
+            
         }
     }
      

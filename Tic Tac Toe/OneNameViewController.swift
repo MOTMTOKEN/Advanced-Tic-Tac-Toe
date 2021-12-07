@@ -29,7 +29,10 @@ class OneNameViewController: UIViewController {
             
             let destinationVc = segue.destination as! ViewController
             
+            
             destinationVc.recivingMessage1 = playersName.text
+            
+            
             
             destinationVc.recivingMessage2 = "Computer"
             

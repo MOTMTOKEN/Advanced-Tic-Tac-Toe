@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btn9: UIButton!
     
-
+    
     @IBOutlet weak var player1NameShow: UILabel!
     
     @IBOutlet weak var player2NameShow: UILabel!
@@ -46,9 +46,9 @@ class ViewController: UIViewController {
     
     
     var recivingMessage1 : String?
-
+    
     var recivingMessage2 : String?
-
+    
     
     var player1Points = 0
     var player2Points = 0
@@ -71,15 +71,15 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
     @IBAction func buttonClicked(_ sender: Any) {
         let selectedButton = sender as! UIButton
         // trying to change font size
-         
-       // print(selectedButton.tag) checks which button is clicked
+        
+        // print(selectedButton.tag) checks which button is clicked
         
         
-            selectedButton.isEnabled = false
+        selectedButton.isEnabled = false
         
         
         if ActivePlayer == 1{
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             
             // since we gave all buttons a tag we can put the tags (1-9) into an array
             // and track what moves the player made
-           // selectedButton.titleLabel?.font = .systemFont(ofSize: 100)    // UIFont(name: "System", size:100)
+            // selectedButton.titleLabel?.font = .systemFont(ofSize: 100)    // UIFont(name: "System", size:100)
             if whichPlayer != 1 {
                 player1.append(selectedButton.tag)
             }
@@ -136,13 +136,13 @@ class ViewController: UIViewController {
             if whosPlaying == 1 && whichPlayer == 1 {
                 whenItsO()
             }
-                        
+            
             findWinner()
         }
         
         // can't press button twice if foundWinner is false
         
-    
+        
         func whenItsO() {
             
             if whosPlaying == 1 && whichPlayer == 1 {
@@ -158,213 +158,213 @@ class ViewController: UIViewController {
     }
     
     func findWinner() {
-            var winner = -1
-            
-            // row_1
-            if( player1.contains(1) &&  player1.contains(2) &&  player1.contains(3)){
-                winner = 1
-            }
-            
-            if( player2.contains(1) &&  player2.contains(2) &&  player2.contains(3)){
-                winner = 2
-            }
+        var winner = -1
         
-        
-            
-            // row_2
-            if( player1.contains(4) &&  player1.contains(5) &&  player1.contains(6)){
-                winner = 1
-            }
-            
-            if( player2.contains(4) &&  player2.contains(5) &&  player2.contains(6)){
-                winner = 2
-            }
-        
-            
-            
-            
-            // row_3
-            if( player1.contains(7) &&  player1.contains(8) &&  player1.contains(9)){
-                winner = 1
-            }
-            
-            if( player2.contains(7) &&  player2.contains(8) &&  player2.contains(9)){
-                winner = 2
-            }
-        
-            
-            
-            
-            // col_1
-            if( player1.contains(1) &&  player1.contains(4) &&  player1.contains(7)){
-                winner = 1
-            }
-            
-            if( player2.contains(1) &&  player2.contains(4) &&  player2.contains(7)){
-                winner = 2
-            }
-        
-            
-            
-            // col_2
-            if( player1.contains(2) &&  player1.contains(5) &&  player1.contains(8)){
-                winner = 1
-            }
-            
-            if( player2.contains(2) &&  player2.contains(5) &&  player2.contains(8)){
-                winner = 2
-            }
-        
-            
-            
-            // col_3
-            if( player1.contains(3) &&  player1.contains(6) &&  player1.contains(9)){
-                winner = 1
-            }
-            
-            if( player2.contains(3) &&  player2.contains(6) &&  player2.contains(9)){
-                winner = 2
-            }
-        
-            
-        
-            // diagonal_1
-            if( player1.contains(1) &&  player1.contains(5) &&  player1.contains(9)){
+        // row_1
+        if( player1.contains(1) &&  player1.contains(2) &&  player1.contains(3)){
             winner = 1
-            }
+        }
         
-            if( player2.contains(1) &&  player2.contains(5) &&  player2.contains(9)){
+        if( player2.contains(1) &&  player2.contains(2) &&  player2.contains(3)){
             winner = 2
-            }
+        }
         
-            
         
-            // diagonal_2
-            if( player1.contains(3) &&  player1.contains(5) &&  player1.contains(7)){
+        
+        // row_2
+        if( player1.contains(4) &&  player1.contains(5) &&  player1.contains(6)){
             winner = 1
-            }
-    
-            if( player2.contains(3) &&  player2.contains(5) &&  player2.contains(7)){
+        }
+        
+        if( player2.contains(4) &&  player2.contains(5) &&  player2.contains(6)){
             winner = 2
-            }
+        }
         
-            // All computer moves check at the end because the computer plays a move even after you win
         
-            if( playerComputer.contains(1) &&  playerComputer.contains(2) &&  playerComputer.contains(3)) && winner == -1{
+        
+        
+        // row_3
+        if( player1.contains(7) &&  player1.contains(8) &&  player1.contains(9)){
+            winner = 1
+        }
+        
+        if( player2.contains(7) &&  player2.contains(8) &&  player2.contains(9)){
+            winner = 2
+        }
+        
+        
+        
+        
+        // col_1
+        if( player1.contains(1) &&  player1.contains(4) &&  player1.contains(7)){
+            winner = 1
+        }
+        
+        if( player2.contains(1) &&  player2.contains(4) &&  player2.contains(7)){
+            winner = 2
+        }
+        
+        
+        
+        // col_2
+        if( player1.contains(2) &&  player1.contains(5) &&  player1.contains(8)){
+            winner = 1
+        }
+        
+        if( player2.contains(2) &&  player2.contains(5) &&  player2.contains(8)){
+            winner = 2
+        }
+        
+        
+        
+        // col_3
+        if( player1.contains(3) &&  player1.contains(6) &&  player1.contains(9)){
+            winner = 1
+        }
+        
+        if( player2.contains(3) &&  player2.contains(6) &&  player2.contains(9)){
+            winner = 2
+        }
+        
+        
+        
+        // diagonal_1
+        if( player1.contains(1) &&  player1.contains(5) &&  player1.contains(9)){
+            winner = 1
+        }
+        
+        if( player2.contains(1) &&  player2.contains(5) &&  player2.contains(9)){
+            winner = 2
+        }
+        
+        
+        
+        // diagonal_2
+        if( player1.contains(3) &&  player1.contains(5) &&  player1.contains(7)){
+            winner = 1
+        }
+        
+        if( player2.contains(3) &&  player2.contains(5) &&  player2.contains(7)){
+            winner = 2
+        }
+        
+        // All computer moves check at the end because the computer plays a move even after you win
+        
+        if( playerComputer.contains(1) &&  playerComputer.contains(2) &&  playerComputer.contains(3)) && winner == -1{
             computerWon()
-                return
-                
-            }
+            return
             
-            if( playerComputer.contains(4) &&  playerComputer.contains(5) &&  playerComputer.contains(6)) && winner == -1{
-            computerWon()
-                return
-                
-            }
-            
-            if( playerComputer.contains(7) &&  playerComputer.contains(8) &&  playerComputer.contains(9)) && winner == -1{
-                 computerWon()
-                return
-            }
-            
-            if( playerComputer.contains(1) &&  playerComputer.contains(4) &&  playerComputer.contains(7)) && winner == -1{
-                computerWon()
-                return
-            }
-            
-            if( playerComputer.contains(2) &&  playerComputer.contains(5) &&  playerComputer.contains(8)) && winner == -1{
-                computerWon()
-                return
-            }
-            
-            if( playerComputer.contains(3) &&  playerComputer.contains(6) &&  playerComputer.contains(9)) && winner == -1{
-                computerWon()
-                return
-            }
-            
-            if( playerComputer.contains(1) &&  playerComputer.contains(5) &&  playerComputer.contains(9)) && winner == -1{
-                computerWon()
-                return
-            }
+        }
         
-            if( playerComputer.contains(3) &&  playerComputer.contains(5) &&  playerComputer.contains(7)) && winner == -1{
-                computerWon()
-                return
-            }
+        if( playerComputer.contains(4) &&  playerComputer.contains(5) &&  playerComputer.contains(6)) && winner == -1{
+            computerWon()
+            return
             
-            
+        }
+        
+        if( playerComputer.contains(7) &&  playerComputer.contains(8) &&  playerComputer.contains(9)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        if( playerComputer.contains(1) &&  playerComputer.contains(4) &&  playerComputer.contains(7)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        if( playerComputer.contains(2) &&  playerComputer.contains(5) &&  playerComputer.contains(8)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        if( playerComputer.contains(3) &&  playerComputer.contains(6) &&  playerComputer.contains(9)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        if( playerComputer.contains(1) &&  playerComputer.contains(5) &&  playerComputer.contains(9)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        if( playerComputer.contains(3) &&  playerComputer.contains(5) &&  playerComputer.contains(7)) && winner == -1{
+            computerWon()
+            return
+        }
+        
+        
         if winner != -1 {
-                    
-                    var msg = ""
-                    if winner == 1 {
-                        
-                        msg = " \(player1NameShow.text ?? "") is winner"
-                        player1Points += 1
-                        // Show updated score
-                        player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
-                        }else{
-                            
-                            if whichPlayer != 1 {
-                        msg = " \(player2NameShow.text ?? "") is winner"
-                        player2Points += 1
-                        // Show updated score
-                        player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
-                            }
-                            // if player is O vs cpmputer give points to player1 and show their name instead
-                            if whichPlayer == 1 {
-                                msg = " \(recivingMessage1 ?? "") is winner"
-                                player1Points += 1
-                                // Show updated score
-                                player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
-                            }
-                        
-                      
-                    }
-                    //print(msg)
-                    //show alert
+            
+            var msg = ""
+            if winner == 1 {
+                
+                msg = " \(player1NameShow.text ?? "") is winner"
+                player1Points += 1
+                // Show updated score
+                player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
+            }else{
+                
+                if whichPlayer != 1 {
+                    msg = " \(player2NameShow.text ?? "") is winner"
+                    player2Points += 1
+                    // Show updated score
+                    player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
+                }
+                // if player is O vs cpmputer give points to player1 and show their name instead
+                if whichPlayer == 1 {
+                    msg = " \(recivingMessage1 ?? "") is winner"
+                    player1Points += 1
+                    // Show updated score
+                    player1NameShow.text = "\(recivingMessage1 ?? "") : \(String(player1Points))"
+                }
+                
+                
+            }
+            //print(msg)
+            //show alert
             let alert = UIAlertController(title: "Winner", message: msg, preferredStyle: UIAlertController.Style.alert)
-             
-             alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-             
-             self.present(alert, animated: true, completion: nil)
+            
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
             
             
             
             resetGame()
-                    
-                }
-
+            
+        }
+        
         if (player1.count == 5 || player2.count == 5 || playerComputer.count == 5) {
-             
-             let alert = UIAlertController(title: "Winner", message: "its a draw", preferredStyle: UIAlertController.Style.alert)
-              
-              alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-              
-              self.present(alert, animated: true, completion: nil)
-             
-             
-             resetGame()
-             
+            
+            let alert = UIAlertController(title: "Winner", message: "its a draw", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            resetGame()
+            
+        }
+        
+        
     }
-        
-        
-}
     
     func resetGame() {
         
-      //  player1 = [Int]()
-      //  player2 = [Int]()
+        //  player1 = [Int]()
+        //  player2 = [Int]()
         
-      //  ActivePlayer = 1
-            
+        //  ActivePlayer = 1
+        
         ActivePlayer = 1
         player1.removeAll()
         player2.removeAll()
         playerComputer.removeAll()
         
         
-                
-
+        
+        
         btn1.setTitle("", for: UIControl.State.normal)
         btn2.setTitle("", for: UIControl.State.normal)
         btn3.setTitle("", for: UIControl.State.normal)
@@ -384,7 +384,7 @@ class ViewController: UIViewController {
         btn7.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
         btn8.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
         btn9.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
-
+        
         btn1.isEnabled = true
         btn2.isEnabled = true
         btn3.isEnabled = true
@@ -394,7 +394,7 @@ class ViewController: UIViewController {
         btn7.isEnabled = true
         btn8.isEnabled = true
         btn9.isEnabled = true
-                    
+        
         // when game resets and we are playing O vs computer we need to start with a move
         if whosPlaying == 1 && whichPlayer == 1 {
             whosTurn.text = "O"
@@ -402,7 +402,7 @@ class ViewController: UIViewController {
             ActivePlayer = 2
         }
         
-        }
+    }
     
     func computerPlayer(string: String){
         
@@ -535,7 +535,7 @@ class ViewController: UIViewController {
                 if whichPlayer != 1 {
                     ActivePlayer = 1
                 }
-                    
+                
                 
                 return
             }
@@ -551,7 +551,7 @@ class ViewController: UIViewController {
                 btn8.isEnabled = false
                 
                 
-                    ActivePlayer = 1
+                ActivePlayer = 1
                 
                 
                 return
@@ -568,7 +568,7 @@ class ViewController: UIViewController {
                 btn9.isEnabled = false
                 
                 
-                    ActivePlayer = 1
+                ActivePlayer = 1
                 
                 return
             }
@@ -584,17 +584,17 @@ class ViewController: UIViewController {
     func computerWon(){
         
         
-            let alert = UIAlertController(title: "Winner", message: "computer won", preferredStyle: UIAlertController.Style.alert)
-             
-             alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-             
-             self.present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Winner", message: "computer won", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
         
         
         
-            player2Points += 1
-            // Show updated score
-            player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
+        player2Points += 1
+        // Show updated score
+        player2NameShow.text = "\(recivingMessage2 ?? "") : \(String(player2Points))"
         
         
         resetGame()
